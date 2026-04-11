@@ -1,0 +1,35 @@
+# Requer um Ingress Controller instalado no cluster (ex: nginx-ingress-controller).
+# Instalação rápida:
+#   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/cloud/deploy.yaml
+#
+# O domínio usa sslip.io — substitua IP pelo IP externo do seu LoadBalancer/Node.
+# Exemplo: se o IP for 203.0.113.42, o host fica: 203-0-113-42-MINHAAPLICACAO.sslip.io
+#
+# Para descobrir o IP do ingress após instalação:
+#   kubectl get svc -n ingress-nginx ingress-nginx-controller
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minha-aplicacao-ingress
+  namespace: minha-aplicacao
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+spec:
+  ingressClassName: nginx
+  rules:
+    # ── Substitua IP pelo IP real do seu cluster (use traços, não pontos) ──────
+    - host: IP-MINHAAPLICACAO.sslip.io
+      http:
+        paths:
+          # Todo tráfego vai para o frontend (que faz proxy /api → backend)
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-service
+                port:
+                  number: 80
