@@ -1,23 +1,9 @@
-# ── PersistentVolumeClaim ──────────────────────────────────────────────────────
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mysql-pvc
-  namespace: minha-aplicacao
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
-
----
 # ── Deployment ─────────────────────────────────────────────────────────────────
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: minha-aplicacao
+  namespace: plataformacadastro
   labels:
     app: mysql
 spec:
@@ -75,18 +61,3 @@ spec:
         - name: mysql-data
           persistentVolumeClaim:
             claimName: mysql-pvc
-
----
-# ── Service (ClusterIP — interno) ─────────────────────────────────────────────
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql-service
-  namespace: minha-aplicacao
-spec:
-  selector:
-    app: mysql
-  ports:
-    - port: 3306
-      targetPort: 3306
-  clusterIP: None      # Headless para acesso direto ao pod único

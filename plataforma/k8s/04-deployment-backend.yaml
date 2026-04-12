@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: minha-aplicacao
+  namespace: plataformacadastro
   labels:
     app: backend
 spec:
@@ -74,17 +74,3 @@ spec:
             limits:
               cpu: "500m"
               memory: "256Mi"
-
----
-# ── Service (ClusterIP — interno) ─────────────────────────────────────────────
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend-service
-  namespace: minha-aplicacao
-spec:
-  selector:
-    app: backend
-  ports:
-    - port: 8080
-      targetPort: 8080

@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: minha-aplicacao
+  namespace: plataformacadastro
   labels:
     app: frontend
 spec:
@@ -40,17 +40,3 @@ spec:
             limits:
               cpu: "200m"
               memory: "128Mi"
-
----
-# ── Service (ClusterIP) ────────────────────────────────────────────────────────
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-service
-  namespace: minha-aplicacao
-spec:
-  selector:
-    app: frontend
-  ports:
-    - port: 80
-      targetPort: 80
