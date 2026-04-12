@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: plataformacadastro
+  namespace: multilayer-app
   labels:
     app: backend
 spec:
@@ -29,7 +29,7 @@ spec:
               done
       containers:
         - name: backend
-          image: sua-registry/backend:latest   # ← altere para sua imagem
+          image: https://hub.docker.com/repository/docker/maxhenrique//backend:latest   # ← altere para sua imagem
           ports:
             - containerPort: 8080
           env:

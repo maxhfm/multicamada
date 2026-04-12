@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: plataformacadastro
+  namespace: multilayer-app
   labels:
     app: frontend
 spec:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: sua-registry/frontend:latest   # ← altere para sua imagem
+          image: https://hub.docker.com/repository/docker/maxhenrique/frontend:latest   # ← altere para sua imagem
           ports:
             - containerPort: 80
           livenessProbe:

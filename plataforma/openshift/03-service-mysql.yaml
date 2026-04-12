@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-service
-  namespace: plataformacadastro
+  namespace: multilayer-app
 spec:
   selector:
     app: mysql
