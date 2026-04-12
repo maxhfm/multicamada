@@ -1,4 +1,4 @@
-# ── Service (ClusterIP — interno) ─────────────────────────────────────────────
+# ── Service (Clu sterIP — interno) ─────────────────────────────────────────────
 apiVersion: v1
 kind: Service
 metadata:

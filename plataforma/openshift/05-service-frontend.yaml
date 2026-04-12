@@ -1,4 +1,4 @@
-# ── Service (ClusterIP) ────────────────────────────────────────────────────────
+# ── Service  (ClusterIP) ────────────────────────────────────────────────────────
 apiVersion: v1
 kind: Service
 metadata:
