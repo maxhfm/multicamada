@@ -1,0 +1,12 @@
+# ── Secret — credenciais do banco ─────────────────────────────────────────────
+# Os valores abaixo são exemplos em base64.
+# Gere com:  echo -n 'seu_valor' | base64
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: plataformacadastro
+data:
+  DB_HOST: "mysql-service"
+  DB_NAME: "appdb"
+  DB_USER: "appuser"
