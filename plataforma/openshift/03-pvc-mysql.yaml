@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
-  namespace: multilayer-app
+  namespace: max-martins-dev
 spec:
   accessModes:
     - ReadWriteOnce
