@@ -6,6 +6,6 @@ kind: ConfigMap
 metadata:
   name: app-multicamada-configmap
 data:
-  DB_HOST: "mysql-service"
+  DB_HOST: "app-multicamada-mysql-service"
   DB_NAME: "appdb"
   DB_USER: "appuser"
