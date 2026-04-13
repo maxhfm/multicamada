@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
-  namespace: gitops-app
+  namespace: trabalhopos
 spec:
   accessModes:
     - ReadWriteOnce
