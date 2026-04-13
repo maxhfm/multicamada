@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: plataformacadastro
+  namespace: gitops-app
   labels:
     app: mysql
 spec:
