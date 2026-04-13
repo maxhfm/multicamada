@@ -1,4 +1,5 @@
-FROM nginx:1.25-alpine
+#FROM nginx:1.25-alpine
+FROM bitnamilegacy/nginx
 
 # REMOVE configs padrão
 RUN rm -rf /etc/nginx/conf.d/*
@@ -8,7 +9,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY index.html /usr/share/nginx/html/index.html
 
-RUN chmod -R 777 /tmp \
-    && chmod -R 777 /usr/share/nginx/html
+#RUN chmod -R 777 /tmp \
+#   && chmod -R 777 /usr/share/nginx/html
 
 EXPOSE 8080
