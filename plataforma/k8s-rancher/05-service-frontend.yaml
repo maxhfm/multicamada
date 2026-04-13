@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: app-multicamada-frontend-service
 spec:
   selector:
     app: frontend

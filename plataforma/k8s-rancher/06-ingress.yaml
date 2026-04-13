@@ -11,7 +11,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: plataformacadastro-ingress
+  name: app-multicamada-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/proxy-body-size: "10m"
