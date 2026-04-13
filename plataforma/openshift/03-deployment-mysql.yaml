@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: max-martins-dev
+  namespace: multilayer-app
   labels:
     app: mysql
 spec:
