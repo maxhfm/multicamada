@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: gitops-app
+  namespace: trabalhopos
   labels:
     app: mysql
 spec:
