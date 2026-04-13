@@ -1,15 +1,14 @@
 FROM nginx:1.25-alpine
 
-# Remove config padrão
-RUN rm /etc/nginx/conf.d/default.conf
-
-# Copia sua config
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copia sua config (sem deletar nada)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY index.html /usr/share/nginx/html/index.html
 
-# Garante permissões amplas
-RUN chmod -R 777 /tmp \
-    && chmod -R 777 /usr/share/nginx/html
+# Permissões OpenShift
+RUN chmod -R 777 /usr/share/nginx/html \
+    && chmod -R 777 /var/cache/nginx \
+    && chmod -R 777 /var/run \
+    && chmod -R 777 /tmp
 
 EXPOSE 8080
