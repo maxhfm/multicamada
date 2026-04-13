@@ -1,5 +1,5 @@
-#FROM nginx:1.25-alpine
-FROM bitnamilegacy/nginx
+FROM nginx:1.25-alpine
+#FROM bitnamilegacy/nginx
 
 # REMOVE configs padrão
 RUN rm -rf /etc/nginx/conf.d/*
