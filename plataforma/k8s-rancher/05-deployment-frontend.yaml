@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: sua-registry/frontend:latest   # ← altere para sua imagem
+          image: docker.io/maxhenrique/frontend:latest  # ← altere para sua imagem
           ports:
             - containerPort: 80
           livenessProbe:

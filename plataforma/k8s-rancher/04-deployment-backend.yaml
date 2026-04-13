@@ -28,7 +28,7 @@ spec:
               done
       containers:
         - name: backend
-          image: sua-registry/backend:latest   # ← altere para sua imagem
+          image: docker.io/maxhenrique/backend:latest    # ← altere para sua imagem
           ports:
             - containerPort: 8080
           env:
