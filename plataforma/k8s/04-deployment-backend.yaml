@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: gitops-app
+  namespace: trabalhopos
   labels:
     app: backend
 spec:
