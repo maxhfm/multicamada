@@ -29,6 +29,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: frontend-service
+                name: app-multicamada-frontend-service
                 port:
                   number: 80

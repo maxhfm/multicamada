@@ -31,12 +31,12 @@ spec:
             - name: MYSQL_DATABASE
               valueFrom:
                 configMapKeyRef:
-                  name: app-multicamada-mysql-secret
+                  name: app-multicamada-configmap
                   key: DB_NAME
             - name: MYSQL_USER
               valueFrom:
                 configMapKeyRef:
-                  name: app-multicamada-mysql-secret
+                  name: app-multicamada-configmap
                   key: DB_USER
             - name: MYSQL_PASSWORD
               valueFrom:
