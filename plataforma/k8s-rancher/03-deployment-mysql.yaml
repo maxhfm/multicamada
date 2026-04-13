@@ -26,22 +26,22 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: app-multicamada-mysql-secret
                   key: root-password
             - name: MYSQL_DATABASE
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: app-multicamada-mysql-secret
                   key: DB_NAME
             - name: MYSQL_USER
               valueFrom:
                 configMapKeyRef:
-                  name: app-config
+                  name: app-multicamada-mysql-secret
                   key: DB_USER
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-secret
+                  name: app-multicamada-mysql-secret
                   key: db-password
           volumeMounts:
             - name: mysql-data
