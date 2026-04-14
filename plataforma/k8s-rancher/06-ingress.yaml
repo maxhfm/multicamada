@@ -12,16 +12,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-multicamada-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-    nginx.ingress.kubernetes.io/proxy-connect-timeout: "60"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+  annotations: {}
 spec:
   ingressClassName: nginx
   rules:
     # ── Substitua IP pelo IP real do seu cluster (use traços, não pontos) ──────
-    - host: aplicacao-trabalho-final.44.192.242.163.sslip.io
+    - host: aplicacao-trabalho-final.44-192-242-163.sslip.io
       http:
         paths:
           # Todo tráfego vai para o frontend (que faz proxy /api → backend)
