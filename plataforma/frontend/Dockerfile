@@ -12,6 +12,6 @@ COPY index.html /usr/share/nginx/html/index.html
 #RUN chmod -R 777 /tmp \
 #   && chmod -R 777 /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8081
 
 CMD ["nginx", "-g", "daemon off;"]
