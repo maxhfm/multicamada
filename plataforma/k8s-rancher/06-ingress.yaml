@@ -21,7 +21,7 @@ spec:
   ingressClassName: nginx
   rules:
     # ── Substitua IP pelo IP real do seu cluster (use traços, não pontos) ──────
-    - host: aplicacao-trabalho-final.44.192.242.163.sslip.io"
+    - host: aplicacao-trabalho-final.44.192.242.163.sslip.io
       http:
         paths:
           # Todo tráfego vai para o frontend (que faz proxy /api → backend)
