@@ -14,7 +14,7 @@ metadata:
   name: app-multicamada-ingress
   annotations: {}
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     # ── Substitua IP pelo IP real do seu cluster (use traços, não pontos) ──────
     - host: sistema-44-192-242-163.sslip.io
